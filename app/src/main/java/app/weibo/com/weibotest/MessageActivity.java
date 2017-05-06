@@ -1,13 +1,16 @@
 package app.weibo.com.weibotest;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class WeiboMainActivity extends AppCompatActivity {
+/**
+ * Created by shuai on 2017/5/3.
+ */
 
+public class MessageActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weibo_main);
+        setContentView(R.layout.activity_message);
     }
 }

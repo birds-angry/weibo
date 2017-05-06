@@ -92,6 +92,7 @@ public class UsersAPI extends AbsOpenAPI {
      */
     public void counts(long[] uids, RequestListener listener) {
         WeiboParameters params = buildCountsParams(uids);
+
         requestAsync(sAPIList.get(READ_USER_COUNT), params, HTTPMETHOD_GET, listener);
     }
     
