@@ -15,6 +15,7 @@ import com.sina.weibo.sdk.widget.LoginButton;
 
 
 /**
+ * 登录
  * Created by shuai on 2017/5/2
  */
 
@@ -47,8 +48,6 @@ public class LoginActivity extends Activity {
     }
     /**
      * 当 SSO 授权 Activity 退出时，该函数被调用。
-     *
-     * @see {@link Activity#onActivityResult}
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -69,12 +68,15 @@ public class LoginActivity extends Activity {
         }
     };
 
+    /**
+     * 登入按钮的监听器，接收授权结果。
+     */
     private class AuthListener implements WeiboAuthListener {
         @Override
         public void onComplete(Bundle values) {
             Oauth2AccessToken accessToken = Oauth2AccessToken.parseAccessToken(values);
             AccessTokenKeeper.writeAccessToken(LoginActivity.this, accessToken);
-            Toast.makeText(LoginActivity.this,"登陆成功",Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this,R.string.weibotest_app_login_success,Toast.LENGTH_SHORT).show();
             finish();
         }
 
@@ -86,7 +88,7 @@ public class LoginActivity extends Activity {
         @Override
         public void onCancel() {
             Toast.makeText(LoginActivity.this,
-                    "取消授权", Toast.LENGTH_SHORT).show();
+                    R.string.weibotest_app_cancel_authorization, Toast.LENGTH_SHORT).show();
         }
 
 

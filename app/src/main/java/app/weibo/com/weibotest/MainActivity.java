@@ -5,15 +5,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.sina.weibo.sdk.auth.Oauth2AccessToken;
-
 /**
+ * 该类是WeiboTest程序的入口
  * Created by shuai on 2017/5/3.
  */
 
 public class MainActivity extends Activity {
-
-     Oauth2AccessToken accessToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +42,12 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this, MessageActivity.class));
             }
         });
+        //跳转登录界面
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
 
-            AccessTokenKeeper.readAccessToken(MainActivity.this);
-            if (accessToken == null ) {
-                Intent intent=new Intent(MainActivity.this,LoginActivity.class);
-                startActivity(intent);
-        }
     }
 
-
 }
+
+

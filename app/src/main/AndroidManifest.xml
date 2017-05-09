@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
     <!-- 用于调用 JNI -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
@@ -28,6 +29,7 @@
         <activity android:name=".MessageActivity"></activity>
         <activity android:name=".SendWeiboActivity"></activity>
         <activity android:name=".UserInfoActivity"></activity>
+
 
         <meta-data
             android:name="com.google.android.gms.version"

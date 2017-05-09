@@ -1,3 +1,29 @@
 <resources>
+    <!-- 主界面 -->
     <string name="app_name">WeiboTest</string>
+    <string name="weibotest_app_message">消息</string>
+    <string name="weibotest_app_send">发微博</string>
+    <string name="weibotest_app_user">我</string>
+
+    <!-- 登录 -->
+    <string name="weibotest_app_login_success">登陆成功</string>
+    <string name="weibotest_app_cancel_authorization">取消授权</string>
+
+    <!-- 消息 -->
+    <string name="weibotest_app_message_comments_list">所有评论</string>
+    <string name="weibotest_app_message_about_me">提到我的</string>
+
+    <!-- 发送微博 -->
+    <string name="weibotest_app_send_weibo_success">发送成功</string>
+    <string name="weibotest_app_send_weibo_choose_photo">添加图片</string>
+    <string name="weibotest_app_send_weibo_send_text">发送（文字）</string>
+    <string name="weibotest_app_send_weibo_send_picture">发送（图片）</string>
+
+    <!-- 用户信息 -->
+    <string name="weibotest_app_user_info_show">我的信息</string>
+
+    <!-- 注销 -->
+    <string name="weibotest_app_logout">注销</string>
+    <string name="weibotest_app_has_been_canceled">已注销</string>
+    <string name="weibotest_app_logout_failed">注销失败</string>
 </resources>

@@ -24,6 +24,7 @@ import com.sina.weibo.sdk.net.RequestListener;
 import com.sina.weibo.sdk.openapi.StatusesAPI;
 
 /**
+ * 发送微博
  * Created by shuai on 2017/5/3.
  */
 
@@ -55,6 +56,7 @@ public class SendWeiboActivity extends Activity  {
         // 对statusAPI实例化
         mStatusesAPI = new StatusesAPI(this, Constants.APP_KEY, mAccessToken);
 
+        //从相册中选取图片
         choosePhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,7 +69,9 @@ public class SendWeiboActivity extends Activity  {
         sendText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            String text=weiboText.getText().toString();
+
+                String text = weiboText.getText().toString();
+                //发送纯文本的微博
                 mStatusesAPI.update(text, null, null, mListener);
 
             }
@@ -76,16 +80,20 @@ public class SendWeiboActivity extends Activity  {
             @Override
             public void onClick(View view) {
                 String text=weiboText.getText().toString();
+                //发送带图片的微博
                 mStatusesAPI.upload(text, bitmap, null, null, mListener);
             }
         });
 
     }
+    /**
+     * 微博 OpenAPI 回调接口。
+     */
     private RequestListener mListener=new RequestListener() {
         @Override
         public void onComplete(String s) {
 
-            Toast.makeText(SendWeiboActivity.this,"发送成功",Toast.LENGTH_SHORT).show();
+            Toast.makeText(SendWeiboActivity.this,R.string.weibotest_app_send_weibo_success,Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -109,19 +117,20 @@ public class SendWeiboActivity extends Activity  {
         Uri uri=data.getData();
         String docId= DocumentsContract.getDocumentId(uri);
         if ("com.android.providers.media.documents".equals(uri.getAuthority())){
-            String id = docId.split(":")[1];
+            String id = docId.split(":")[1];       //解析出数字格式的id
             String selection= MediaStore.Images.Media._ID + "=" + id;
             imagePath=getImagePath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,selection);
         }else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())){
             Uri contentUri= ContentUris.withAppendedId(Uri.parse("content:downloads/public_downloads"),Long.valueOf(docId));
             imagePath=getImagePath(contentUri,null);
         }
-        displayImage(imagePath);
+        displayImage(imagePath);  //根据图片路径显示图片
     }
 
 
     private String getImagePath(Uri uri, String selection) {
         String path=null;
+        //通过Uri和selection来获取真实的图片路径
         Cursor cursor=getContentResolver().query(uri,null,selection,null,null);
         if (cursor!=null){
             if (cursor.moveToFirst()){

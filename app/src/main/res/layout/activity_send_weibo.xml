@@ -22,21 +22,21 @@
 
     <Button
         android:id="@+id/choose_photo"
-        android:text="添加图片"
+        android:text="@string/weibotest_app_send_weibo_choose_photo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_gravity="bottom"/>
     <Button
         android:id="@+id/send_text"
-        android:text="发送（文字）"
+        android:text="@string/weibotest_app_send_weibo_send_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_gravity="bottom"/>
     <Button
         android:id="@+id/send_picture"
-        android:text="发送（图片）"
+        android:text="@string/weibotest_app_send_weibo_send_picture"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"

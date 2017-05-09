@@ -5,21 +5,21 @@
     android:layout_height="match_parent">
 
     <Button
-        android:text="消息"
+        android:text="@string/weibotest_app_message"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:id="@+id/message"
         android:layout_gravity="bottom"/>
     <Button
-        android:text="发微博"
+        android:text="@string/weibotest_app_send"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:id="@+id/send"
         android:layout_gravity="bottom"/>
     <Button
-        android:text="我"
+        android:text="@string/weibotest_app_user"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
